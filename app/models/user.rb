@@ -9,4 +9,6 @@ class User < ApplicationRecord
     validates :password, format:{with:/([0-9].*[a-zA-Z]|[a-zA-Z].*[0-9])/ }
     
     has_secure_password
+    
+    has_many :topics
 end
