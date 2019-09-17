@@ -13,10 +13,19 @@
                   <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
                 <% end %>
             <% end %>
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            
+            <%= link_to new_topic_comment_path(topic_id: topic.id), method: :get do %>
+              <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <% end %>
             <p class="topic-text">
               <%= topic.description %>
             </p>
+            <h5>コメントを追加</h5>
+            <%#　
+            ここに form_for を使った、コメント入力フォームを表示する記述をかく。
+            ここに form_for を使った、コメント入力フォームを表示する記述をかく。
+            ここに form_for を使った、コメント入力フォームを表示する記述をかく。
+            %>
           </div>
         </div>
       </div>
