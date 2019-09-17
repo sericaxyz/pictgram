@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
-#  def new
-  def create
+def new
     comment = Comment.new
     comment.user_id = current_user.id
     comment.topic_id = params[:topic_id]
@@ -12,6 +11,6 @@ class CommentsController < ApplicationController
     else
       redirect_to topics_path, danger: 'コメント登録に失敗しました'
     end
-  end
+end
   
 end
