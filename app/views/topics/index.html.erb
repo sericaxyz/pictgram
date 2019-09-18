@@ -20,12 +20,15 @@
             <p class="topic-text">
               <%= topic.description %>
             </p>
-            <h5>コメントを追加</h5>
-            <%#　
-            ここに form_for を使った、コメント入力フォームを表示する記述をかく。
-            ここに form_for を使った、コメント入力フォームを表示する記述をかく。
-            ここに form_for を使った、コメント入力フォームを表示する記述をかく。
-            %>
+            
+            <h5>コメント</h5>
+            
+            <% topic.comments.each do |comment| %>
+            <div style="clear:both">
+              <%= comment.content %>
+            </div>
+            <% end %>
+            
           </div>
         </div>
       </div>
