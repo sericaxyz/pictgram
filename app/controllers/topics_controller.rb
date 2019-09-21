@@ -2,13 +2,6 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all.includes(:favorite_users)
-#   @comment = Comment.new
-
-    @topic = Topic.find_by(id: params[:id])
-    
-    # 変数@favorites_countを定義
-    @favorites_count = Favorite.where(topic_id: @topic.id).count
-    
   end
 
   def new
