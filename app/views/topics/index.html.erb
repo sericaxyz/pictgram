@@ -13,14 +13,17 @@
                   <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
                 <% end %>
               <% else %>
-              <%= link_to destroy_path(topic_id: topic.id), method: :post do %>
-                 <%= image_tag 'icons/heart-red.png', class: 'topic-index-icon' %>
-              <% end %>
+                <%= link_to destroy_path(topic_id: topic.id), method: :post do %>
+                  <%= image_tag 'icons/heart-red.png', class: 'topic-index-icon' %>
+                <% end %>
             <% end %>
-            
+            <!-- 変数@favorites_countを表示 -->
+            <%= @favorites_count %>
+
             <%= link_to new_topic_comment_path(topic_id: topic.id), method: :get do %>
               <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
             <% end %>
+           
             <p class="topic-text">
               <%= topic.description %>
             </p>
